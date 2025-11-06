@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=1000">
+  <title>About Authentigram</title>
+  <script src="script3.js"></script>
+  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    nav {
+        background: #2e2e2e;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 950px; 
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 35px;
+      margin-right: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #ff2c73;
+      bottom: -4px;
+      left: 0;
+    }
+
+    
+
+    .about-section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-section h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: left;
+      background: linear-gradient(90deg,
+        #a400ff 0%,
+        #ff0080 27%,
+        #ff2a2a 33%,
+        #ff7a00 36%,
+        #ffa500 37%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin: 20px 0;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #ddd;
+    }
+
+    .about-section p strong {
+      color: white;
+    }
+
+    .about-section img {
+      max-width: 300px;
+      float: right;
+      margin-left: 2rem;
+      border-radius: 20px;
+    }
+
+    .about-content {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.glow-image {
+  flex-shrink: 0;
+}
+
+.glow-image {
+  position: relative;
+  display: inline-block; 
+  padding: 2rem;
+}
+
+.glow-image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(174, 8, 72, 0.7) 0%, rgba(0,0,0,0) 80%);
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.site-footer {
+  background: linear-gradient(180deg, #1a1a1a, #121212); 
+  color: white;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #555; 
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-left li {
+  margin-bottom: 15px;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-left a:hover {
+  color: #fff;
+}
+
+.footer-subscribe {
+  max-width: 400px;
+}
+
+.subscribe-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+.subscribe-form input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  flex: 1;
+  outline: none;
+}
+
+.subscribe-form button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.register, .login {
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.register {
+    background-color: #ff007f;
+    color: white;
+    border: 1px solid #ff007f;
+    margin-right: 15px;
+}
+
+.register:hover {
+    background-color: #e60073;
+    border-color: #e60073;
+}
+
+.login {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ff007f;
+}
+
+.login:hover {
+    background-color: #ff007f;
+    color: white;
+}
+@media (max-width: 1024px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  #auth-buttons, #user-info {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links, #auth-buttons, #user-info {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+  }
+
+  .register, .login {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+
+  #profile-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  #profile-dropdown {
+    top: 45px;
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #auth-buttons, #user-info {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .register, .login {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  #profile-dropdown {
+    right: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="H Logo.png" alt="Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="dashboard.html">Home</a>
+      <a href="About.html" class="active">About</a>
+      <a href="ContactPage.html">Contact</a>
+    </div>
+    <div id="auth-buttons">
+      <button class="register" onclick="window.location.href='AuthentigramSignUp.html'">Register</button>
+      <button class="login" onclick="window.location.href='AuthentigramLogin.html'">Login</button>
+  
+  </div>
+
+  <div id="user-info" style="display: none; position: relative;">
+    <div id="profile-btn" style="width: 40px; height: 40px; border-radius: 50%; background-color: #ff007f; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+        <i class="fas fa-user" style="color: white;"></i>
+    </div>
+    
+    <div id="profile-dropdown" style="display: none; position: absolute; top: 50px; right: 0; background: #222; padding: 10px; border-radius: 8px; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100;">
+        <p id="user-email" style="margin: 0 0 10px 0;"></p>
+        <button onclick="logout()" style="padding: 5px 10px; background: #ff007f; border: none; border-radius: 5px; color: white; cursor: pointer;">Logout</button>
+    </div>
+</div>
+    
+  </nav>
+
+  
+  
+
+  <section class="about-section">
+    <h1>About Authentigram</h1>
+    <div class="about-content">
+      <div class="text-content">
+        <p><strong>Vision:</strong> A digital world where trust is paramount.</p>
+        <p>Social platforms evolve, but so do threats like deceptive profiles, automated bots, and orchestrated campaigns. These manipulate reality and jeopardize genuine interactions.</p>
+        <p>We’re here to change that.</p>
+    
+        <h3 style="margin-top: 2rem; color: white;">How We Protect You</h3>
+        <p>We empower users with actionable insights. Using advanced AI-driven analysis, including behavioral patterns, sentiment detection, and cybersecurity tools—we monitor Instagram accounts for:</p>
+    
+        <ul class="about-list">
+          <li><strong>Inconsistencies</strong></li>
+          <li><strong>Bot-like activity</strong></li>
+          <li><strong>Abnormal trends</strong></li>
+        </ul>
+    
+        <p>Whether you’re a casual user, influencer, or business, we help you identify fake engagement before it harms your experience.</p>
+    
+        <h3 style="margin-top: 2rem; color: white;">Why Authentigram Stands Out</h3>
+        <p>We don’t just flag profiles—we explain why.</p>
+    
+        <p><strong>Evidence-driven results:</strong> Every score is backed by behavioral data and AI analysis.</p>
+        <p><strong>No jargon, just clarity:</strong> Understand risks instantly with plain-language explanations.</p>
+        <p><strong>Actionable insights:</strong> Spot fake followers, suspicious engagement, and bot patterns at a glance.</p>
+        <p><strong>User-first design:</strong> Tools built for everyone—no technical expertise needed.</p>
+    
+        <p style="margin-top: 2rem; font-style: italic;">Trust the process. Focus on what’s real.</p>
+      </div>
+      <div class="glow-image">
+        <img src="Auth logo.png" alt="Instagram Logo" />
+      </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <ul>
+              <li><a href="About.html">About Us</a></li>
+              <li><a href="FAQS.html">FAQs</a></li>
+              <li><a href="ContactPage.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-subscribe">
+            <p class="subscribe-title">Exclusive offers straight to your inbox</p>
+            <div class="subscribe-form">
+              <input type="email" placeholder="your-email@example.com">
+              <button>&rarr;</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+  
+</body>
+</html>

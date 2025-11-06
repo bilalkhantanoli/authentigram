@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+  color: white;
+}
+
+.container {
+  display: flex;
+  width: 850px;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(255, 0, 127, 0.5);
+}
+
+.image-section {
+  flex: 1;
+  background: url('/images/Insta logo.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.login-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #121212;
+  border-radius: 0 12px 12px 0;
+}
+
+h1 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid #555;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+input:focus {
+  border-bottom: 2px solid #ff007f;
+}
+
+.login-btn {
+  width: 50%;
+  padding: 14px;
+  background-color: #ff007f;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-top: 25px;
+}
+
+.login-btn:hover {
+  box-shadow: 0px 0px 15px #ff007f;
+  transform: scale(1.05);
+}
+
+.google-btn {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #222;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.google-btn img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.google-btn:hover {
+  background: linear-gradient(45deg, #ff5700, #ff007f);
+  box-shadow: 0px 0px 15px rgba(255, 87, 0, 0.7);
+}
+
+.divider {
+  margin: 20px 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+}
+
+.Login {
+  margin-top: 15px;
+  text-align: center;
+  color: gray;
+}
+
+.Login span {
+  color: #fefefe;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.eye-icon:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    box-shadow: none;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .login-section {
+    border-radius: 0 0 12px 12px;
+    padding: 30px 25px;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

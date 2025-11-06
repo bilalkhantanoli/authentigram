@@ -1,0 +1,11 @@
+.site-footer { background: linear-gradient(180deg, #1a1a1a, #121212); color:white; padding:2rem 1.5rem; border-top:1px solid #555; }
+.footer-container { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; max-width:1000px; margin:0 auto; }
+.footer-left ul { list-style:none; padding:0; }
+.footer-left li { margin-bottom: 15px; }
+.footer-left a { text-decoration:none; color:#ccc; font-size:16px; transition: color .3s ease; }
+.footer-left a:hover { color:#fff; }
+.footer-subscribe { max-width: 400px; }
+.subscribe-title { font-weight:600; font-size:1.1rem; margin-bottom:1rem; }
+.subscribe-form { display:flex; align-items:center; border-bottom:1px solid #fff; padding-bottom:5px; }
+.subscribe-form input { background: transparent; border:none; color:white; font-size:1rem; flex:1; outline:none; }
+.subscribe-form button { background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; }
