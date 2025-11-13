@@ -15,7 +15,7 @@ export default function Dashboard() {
   const handleAnalyzeClick = () => {
     const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
-      navigate('/analyze');
+      navigate('/options');
     } else {
       setShowDialog(true);
     }

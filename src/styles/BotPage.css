@@ -1,0 +1,85 @@
+.bot-page {
+  background: #111;
+  color: white;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.main-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.analyze-section {
+  background: radial-gradient(circle at right, rgba(174, 8, 72, 0.7) 0%, rgba(0,0,0,0) 40%);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analyze-container {
+  max-width: 700px;
+  text-align: left;
+  color: white;
+}
+
+.analyze-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #a400ff 0%, #ff0080 25%, #ff2a2a 40%, #ff7a00 60%, #ffaa00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin: 20px 0;
+}
+
+.analyze-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.analyze-desc {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.analyze-input-wrapper {
+  display: flex;
+  border: 2px solid #e2358e;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.analyze-input {
+  flex: 1;
+  padding: 14px 18px;
+  font-size: 1rem;
+  background-color: #1a1a1a;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.analyze-btn {
+  background: linear-gradient(to right, #a400ff, #ff007f, #ff6a00);
+  border: none;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.note-text {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 12px;
+}

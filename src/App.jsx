@@ -45,26 +45,26 @@ function App() {
     document.body.scrollTop = 0;
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem('loggedInUser');
-    setUser(null);
-  };
 
   return (
     <Router>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Dashboard user={user} onLogout={handleLogout} />} />
-        <Route path="/about" element={<About user={user} onLogout={handleLogout} />} />
-        <Route path="/analyze" element={<Analyze user={user} onLogout={handleLogout} />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/analyze" element={<Analyze />} />
         <Route path="/login" element={<AuthentigramLogin />} />
         <Route path="/signup" element={<AuthentigramSignUp />} />
-        <Route path="/bot" element={<BotPage user={user} onLogout={handleLogout} />} />
-        <Route path="/contact" element={<ContactPage user={user} onLogout={handleLogout} />} />
-        <Route path="/dashboard" element={<Dashboard user={user} onLogout={handleLogout} />} />
-        <Route path="/faqs" element={<FAQS user={user} onLogout={handleLogout} />} />
+        <Route path="/bot" element={<BotPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/faqs" element={<FAQS />} />
         <Route path="/forgot" element={<Forgot />} />
-        <Route path="/options" element={user ? <OptionPage user={user} onLogout={handleLogout} /> : <Navigate to="/login" />} />
+        <Route path="/options" element={
+          localStorage.getItem('loggedInUser')
+            ? <OptionPage />
+            : <Navigate to="/login" />
+        } />
       </Routes>
     </Router>
   );
