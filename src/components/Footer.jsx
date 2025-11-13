@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.css';
+import '../styles/Dashboard.css';
 
 const Footer = () => (
-  <footer className="site-footer">
-    <div className="footer-container">
-      <div className="footer-left">
-        <ul>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/faqs">FAQs</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-        </ul>
-      </div>
-      <div className="footer-subscribe">
-        <p className="subscribe-title">Exclusive offers straight to your inbox</p>
-        <form className="subscribe-form" onSubmit={(e)=>e.preventDefault()}>
-          <input type="email" placeholder="your-email@example.com" />
-          <button type="submit">&rarr;</button>
-        </form>
-      </div>
+  <footer className="custom-footer">
+    <div className="footer-left">
+      <ul>
+        <li><Link to="/about">About Us</Link></li>
+        <li><Link to="/faqs">FAQs</Link></li>
+        <li><Link to="/contact">Contact Us</Link></li>
+      </ul>
+    </div>
+    <div className="footer-right">
+      <h3>Exclusive offers straight to your inbox</h3>
+      <form className="subscribe-form" onSubmit={e => e.preventDefault()}>
+        <input type="email" placeholder="your-email@example.com" />
+        <button type="submit">
+          <i className="fas fa-arrow-right"></i>
+        </button>
+      </form>
     </div>
   </footer>
 );

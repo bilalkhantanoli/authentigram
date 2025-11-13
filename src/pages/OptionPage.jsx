@@ -22,7 +22,7 @@ export default function OptionPage({ user, onLogout }) {
   ];
 
   return (
-    <div>
+    <div className="option-page">
       <Navbar user={user} onLogout={onLogout} />
       <main className="main-container">
         <h2 className="section-heading">Choose Your Analysis</h2>

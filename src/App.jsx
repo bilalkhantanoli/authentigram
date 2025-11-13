@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import './App.css';
 
 // Pages
@@ -15,6 +15,21 @@ import FAQS from './pages/FAQS';
 import Forgot from './pages/Forgot';
 import OptionPage from './pages/OptionPage';
 
+// Scroll restoration component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+    // Also ensure document and html scroll to top
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const [user, setUser] = useState(null);
 
@@ -23,6 +38,11 @@ function App() {
     if (loggedInUser) {
       setUser({ email: loggedInUser });
     }
+
+    // Ensure page loads from top on mount
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, []);
 
   const handleLogout = () => {
@@ -32,6 +52,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Dashboard user={user} onLogout={handleLogout} />} />
         <Route path="/about" element={<About user={user} onLogout={handleLogout} />} />

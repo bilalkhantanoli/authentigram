@@ -16,7 +16,7 @@ export default function FAQS({ user, onLogout }) {
   ];
 
   return (
-    <div>
+    <div className="faqs-page">
       <Navbar user={user} onLogout={onLogout} />
       <section className="faq-section">
         <h1>Frequently Asked Questions</h1>

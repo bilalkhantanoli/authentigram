@@ -1,8 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
+/* Body styles managed globally in index.css */
+.analyze-page {
   background: #111;
   color: white;
+  min-height: 100vh;
 }
 
 .main-container {
@@ -16,7 +16,8 @@ body {
   padding: 80px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to fix zoom scrolling */
+  min-height: auto;
 }
 
 .analyze-container {

@@ -1,1 +1,24 @@
-/* Empty on purpose to avoid Vite demo styles interfering with site */
+/* App-level styles - avoid duplicating html/body rules (they're in index.css) */
+
+/* Ensure smooth transitions and proper rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page container styles */
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Ensure content is accessible from top */
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}

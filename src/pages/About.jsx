@@ -3,14 +3,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/About.css';
 
-export default function About({ user, onLogout }) {
+export default function About() {
   useEffect(() => {
     document.title = 'About Authentigram';
   }, []);
 
   return (
-    <div>
-      <Navbar user={user} onLogout={onLogout} />
+    <div className="about-page">
+      <Navbar />
       
       <section className="about-section">
         <h1>About Authentigram</h1>

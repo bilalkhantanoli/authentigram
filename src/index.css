@@ -1,3 +1,46 @@
-/* Minimal reset to avoid overriding app styles */
-* { box-sizing: border-box; }
-body { margin: 0; }
+/* Global reset - ensure proper scrolling at all zoom levels */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* Force scroll position to start at top */
+  scroll-padding-top: 0;
+}
+
+body {
+  min-height: 100vh;
+  height: auto;
+  overflow-y: visible;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* Ensure body starts from top */
+  top: 0;
+  left: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Ensure root container starts from top */
+  top: 0;
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+  flex: 1;
+  position: relative;
+}

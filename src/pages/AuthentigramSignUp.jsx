@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/AuthSignUp.css';
 
 export default function AuthentigramSignUp() {
@@ -12,9 +12,20 @@ export default function AuthentigramSignUp() {
     document.title = 'Authentigram Signup';
   }, []);
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       alert('Please fill in all fields!');
       return;
@@ -30,57 +41,63 @@ export default function AuthentigramSignUp() {
   };
 
   const togglePassword = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
   };
 
   return (
-    <div className="container">
-      <div className="image-section">
-        {/* Background image set in CSS */}
-      </div>
-      <div className="login-section">
-        <img src="/images/Logo2.png" alt="Authentigram Logo" className="logo1" />
-        <h1>Create Account</h1>
+    <div className="auth-signup-page">
+      <div className="container">
+        <div className="image-section">
+        </div>
+        <div className="login-section">
+          <img className="logo1" src="/images/Logo2.png" alt="Authentigram Logo" />
+          <h1>Get Started!</h1>
         <form id="signup-form" onSubmit={handleSubmit}>
-          <label htmlFor="signup-email">Email</label>
-          <div className="input-container">
+          <label>Email</label>
+          <div style={{ position: "relative" }}>
             <input
               type="email"
               id="signup-email"
               placeholder="Enter your email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
-
-          <label htmlFor="password">Password</label>
-          <div className="input-container">
+          <br></br>
+          
+          <label>Password</label>
+          <div style={{ position: "relative" }}>
             <input
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               id="password"
               placeholder="Enter your password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
             />
-            <span className="eye-icon" id="togglePassword" onClick={togglePassword}>
-              <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+            <span className="eye-icon" id="togglePassword" onClick={togglePassword} style={{ userSelect: "none" }}>
+              <i className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
             </span>
           </div>
-
-          <button type="submit" className="login-btn">Sign Up</button>
-
-          <div className="divider">Or continue with</div>
-
-          <button type="button" className="google-btn">
-            <img src="/images/G Logo.png" alt="Google" className="google-icon" />
-            Continue with Google
-          </button>
-
-          <p className="Login">
-            Already have an account? <span onClick={() => navigate('/login')}>Login</span>
-          </p>
+          <center>
+            <button className="login-btn" type="submit">
+              Create account
+            </button>
+          </center>
         </form>
+        <div className="divider"> Or register with</div>
+        <div
+          id="g_id_onload"
+          data-client_id="221005578590-emokmb341i4gudl1th2nm7fepfll4opj.apps.googleusercontent.com"
+          data-context="signin"
+          data-ux_mode="popup"
+          data-callback="handleCredentialResponse"
+        ></div>
+        <div className="g_id_signin" data-type="standard"></div>
+        <p className="Login">
+          Have an account? <Link to="/login"><span>Login</span></Link>
+        </p>
       </div>
+    </div>
     </div>
   );
 }

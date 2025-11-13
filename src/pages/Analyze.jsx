@@ -11,6 +11,8 @@ export default function Analyze({ user, onLogout }) {
 
   useEffect(() => {
     document.title = 'Authentigram - Analyze Fake Profile';
+    // Ensure page loads from top
+    window.scrollTo(0, 0);
   }, []);
 
   const handleAnalyze = () => {
@@ -22,7 +24,7 @@ export default function Analyze({ user, onLogout }) {
   };
 
   return (
-    <div>
+    <div className="analyze-page">
       <Navbar user={user} onLogout={onLogout} />
       
       <div className="main-container">

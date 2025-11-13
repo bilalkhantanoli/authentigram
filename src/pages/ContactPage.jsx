@@ -3,52 +3,54 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/ContactPage.css';
 
-export default function ContactPage({ user, onLogout }) {
+export default function ContactPage() {
   useEffect(() => { document.title = 'Contact Us'; }, []);
 
   return (
-    <div>
-      <Navbar user={user} onLogout={onLogout} />
+    <div className="contact-page">
+      <Navbar />
       <main className="main-content">
         <h1>Contact Us</h1>
-        <p>We'd love to hear from you. Reach out for support, feedback, or partnerships.</p>
+        <p>Have questions or feedback? We’d love to hear from you!</p>
+        <p>Feel free to reach out for inquiries related to our project, collaborations, or suggestions.</p>
 
-        <section className="container">
+        <div className="container">
           <div className="contact-info">
             <div className="info-box">
-              <div className="icon"><i className="fas fa-envelope"></i></div>
-              <div className="info-text"><span>Email</span><span>support@authentigram.app</span></div>
+              <div className="icon">📞</div>
+              <div className="info-text">
+                <span>Phone Number</span>
+                <span>1234 5678912</span>
+              </div>
             </div>
             <div className="info-box">
-              <div className="icon"><i className="fas fa-phone"></i></div>
-              <div className="info-text"><span>Phone</span><span>+1 (555) 123-4567</span></div>
+              <div className="icon">📧</div>
+              <div className="info-text">
+                <span>Email Address</span>
+                <span>example@gmail.com</span>
+              </div>
             </div>
             <div className="info-box">
-              <div className="icon"><i className="fas fa-map-marker-alt"></i></div>
-              <div className="info-text"><span>Address</span><span>123 Trust Lane, Secure City</span></div>
+              <div className="icon">📍</div>
+              <div className="info-text">
+                <span>Location</span>
+                <span>123 Avenue Park</span>
+              </div>
             </div>
           </div>
-          <form className="contact-form" onSubmit={(e)=>e.preventDefault()}>
-            <div className="input-group">
-              <label htmlFor="name">Full Name</label>
-              <input id="name" type="text" placeholder="Your name" />
+
+          <div className="contact-form">
+            <h2>Send Message</h2>
+            <div className="form-grid">
+              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Email Address" />
+              <input type="text" placeholder="Phone Number" />
+              <input type="text" placeholder="Subject" />
+              <textarea placeholder="Message"></textarea>
             </div>
-            <div className="input-group">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" placeholder="Your email" />
-            </div>
-            <div className="input-group">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" placeholder="Write your message"></textarea>
-            </div>
-            <button className="submit-btn" type="submit">Send Message</button>
-            <div className="social-icons">
-              <div className="social-icon"><i className="fab fa-twitter"></i></div>
-              <div className="social-icon"><i className="fab fa-instagram"></i></div>
-              <div className="social-icon"><i className="fab fa-linkedin-in"></i></div>
-            </div>
-          </form>
-        </section>
+            <button>Send Message</button>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

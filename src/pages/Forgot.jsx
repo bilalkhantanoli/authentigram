@@ -43,43 +43,45 @@ export default function Forgot() {
   };
 
   return (
-    <div>
+    <div className="forgot-page">
       <div className="layer lower"></div>
       <div className="layer upper"></div>
-
       <div className="reset-container">
         <div className="logo">
           <img src="/images/Logo2.png" alt="Authentigram Logo" />
         </div>
         <h1 className="heading">Reset Password</h1>
-
-        <div className="form-group">
-          <label htmlFor="email" className="field-label">Email</label>
-          <div className="input-container">
-            <input
-              type="email"
-              id="reset-email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+        <form onSubmit={handleReset} style={{ width: "100%" }}>
+          <div className="form-group">
+            <label htmlFor="email" className="field-label">Email</label>
+            <div className="input-container">
+              <input
+                type="email"
+                id="reset-email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </div>
           </div>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="new-password" className="field-label">Password</label>
-          <div className="input-container">
-            <input
-              type="password"
-              id="new-password"
-              placeholder="Enter your new password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-            />
+          <br></br>
+          <div className="form-group">
+            <label htmlFor="new-password" className="field-label">Password</label>
+            <div className="input-container">
+              <input
+                type="password"
+                id="new-password"
+                placeholder="Enter your new password"
+                value={newPassword}
+                onChange={e => setNewPassword(e.target.value)}
+              />
+            </div>
           </div>
-        </div>
-
-        <button className="btn reset-btn" id="reset-btn" onClick={handleReset}>Reset Password</button>
+          <br></br>
+          <button className="btn reset-btn" id="reset-btn" type="submit">
+            Reset Password
+          </button>
+        </form>
         <Link to="/login" className="return-link">Return to Login</Link>
       </div>
     </div>

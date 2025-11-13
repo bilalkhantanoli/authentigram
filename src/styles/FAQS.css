@@ -1,8 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
+/* Body styles managed globally in index.css */
+.faqs-page {
   background: #111;
   color: white;
+  min-height: 100vh;
 }
 
 .faq-section {
